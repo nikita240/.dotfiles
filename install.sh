@@ -11,6 +11,8 @@ DOTFILES=$(dirname "$SCRIPT")
 
 rm -rf ~/.vim
 
+mkdir -p ~/woven
+
 #==============
 # Create symlinks in the home folder
 # Allow overriding with files of matching names in the custom-configs dir
