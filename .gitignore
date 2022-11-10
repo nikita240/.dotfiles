@@ -1,5 +1,6 @@
 *
 !.vim
+!.vim/**
 !woven/.gitconfig
 !.antigen.zsh
 !.dockerignore
@@ -9,3 +10,4 @@
 !.vimrc
 !.zshrc
 !Dockerfile
+!install.sh
