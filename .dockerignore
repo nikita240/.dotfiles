@@ -1,0 +1,10 @@
+*
+!.vim
+!woven/.gitconfig
+!.antigen.zsh
+!.gitconfig
+!.gitignore
+!.gitignore-global
+!.vimrc
+!.zshrc
+!Dockerfile
