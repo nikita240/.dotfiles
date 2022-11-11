@@ -20,7 +20,7 @@ Plug 'plasticboy/vim-markdown'
 " Initialize plugin system
 call plug#end()
 
-colorscheme dracula
+:silent! colorscheme dracula
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 

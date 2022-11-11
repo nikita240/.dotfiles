@@ -10,6 +10,7 @@ DOTFILES=$(dirname "$SCRIPT")
 #==============
 
 rm -rf ~/.vim
+mkdir -p ~/.vim
 
 mkdir -p ~/woven
 
@@ -17,7 +18,7 @@ mkdir -p ~/woven
 # Create symlinks in the home folder
 # Allow overriding with files of matching names in the custom-configs dir
 #==============
-ln -sf $DOTFILES/.vim ~/.vim
+ln -sf $DOTFILES/.vim/autoload ~/.vim/autoload
 ln -sf $DOTFILES/woven/.gitconfig ~/woven/.gitconfig
 ln -sf $DOTFILES/.antigen.zsh ~/.antigen.zsh
 ln -sf $DOTFILES/.gitconfig ~/.gitconfig
@@ -31,3 +32,13 @@ ln -sf $DOTFILES/.zshrc ~/.zshrc
 #==============
 
 sed -i '1s;^;zsh\n;' ~/.bashrc
+
+#==============
+# Install vim plugins
+#==============
+
+vim +'PlugInstall --sync' +qa
+
+echo "****************************************************"
+echo "Run chsh -s /usr/bin/zsh to change your shell to zsh"
+echo "****************************************************"

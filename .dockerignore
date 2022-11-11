@@ -1,6 +1,5 @@
 *
-!.vim
-!.vim/**
+!.vim/autoload
 !woven/.gitconfig
 !.antigen.zsh
 !.gitconfig

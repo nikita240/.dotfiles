@@ -1,6 +1,5 @@
 *
-!.vim
-!.vim/**
+!.vim/autoload
 !woven/.gitconfig
 !.antigen.zsh
 !.dockerignore
@@ -11,3 +10,4 @@
 !.zshrc
 !Dockerfile
 !install.sh
+!README.md
