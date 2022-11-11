@@ -31,7 +31,7 @@ ln -sf $DOTFILES/.zshrc ~/.zshrc
 # If the default shell is bash, make sure it will just launch zsh
 #==============
 
-sed -i '1s;^;zsh\n;' ~/.bashrc
+sed -i '1s;^;setenv SHELL /usr/bin/zsh\nexec /usr/bin/zsh\n;' ~/.bashrc
 
 #==============
 # Install vim plugins
