@@ -25,3 +25,9 @@ ln -sf $DOTFILES/.gitignore ~/.gitignore
 ln -sf $DOTFILES/.gitignore-global ~/.gitignore-global
 ln -sf $DOTFILES/.vimrc ~/.vimrc
 ln -sf $DOTFILES/.zshrc ~/.zshrc
+
+#==============
+# If the default shell is bash, make sure it will just launch zsh
+#==============
+
+sed -i '1s;^;zsh\n;' ~/.bashrc
