@@ -21,7 +21,7 @@ mkdir -p ~/woven
 ln -sf $DOTFILES/.vim/autoload ~/.vim/autoload
 ln -sf $DOTFILES/woven/.gitconfig ~/woven/.gitconfig
 ln -sf $DOTFILES/.antigen.zsh ~/.antigen.zsh
-ln -sf $DOTFILES/.gitconfig ~/.gitconfig
+#ln -sf $DOTFILES/.gitconfig ~/.gitconfig
 ln -sf $DOTFILES/.gitignore ~/.gitignore
 ln -sf $DOTFILES/.gitignore-global ~/.gitignore-global
 ln -sf $DOTFILES/.vimrc ~/.vimrc
