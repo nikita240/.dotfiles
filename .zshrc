@@ -12,10 +12,9 @@ source $HOME/.antigen.zsh
 SPACESHIP_CHAR_PREFIX='%{%G%G'
 SPACESHIP_CHAR_SUFFIX='%}'
 
-antigen use ohmyzsh/ohmyzsh
+antigen use oh-my-zsh
 
 antigen bundle git
-antigen bundle Aloxaf/fzf-tab
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -25,8 +24,11 @@ antigen bundle command-not-found
 antigen bundle docker
 antigen bundle systemd
 antigen bundle desyncr/auto-ls
-antigen bundle fzf
 antigen theme spaceship-prompt/spaceship-prompt
+if [ -f $FZF_BASE ]; then
+	antigen bundle Aloxaf/fzf-tab
+	antigen bundle fzf
+fi
 
 antigen apply
 
