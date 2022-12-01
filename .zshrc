@@ -12,7 +12,7 @@ source $HOME/.antigen.zsh
 SPACESHIP_CHAR_PREFIX='%{%G%G'
 SPACESHIP_CHAR_SUFFIX='%}'
 
-antigen use oh-my-zsh
+antigen use 'ohmyzsh/ohmyzsh'
 
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
