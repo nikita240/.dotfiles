@@ -1,36 +1,42 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export FZF_BASE=/usr/share/fzf
+autoload -Uz compinit && compinit
 
-if [ ! -f "$HOME/.antigen.zsh" ]; then
-	curl -L git.io/antigen > $HOME/.antigen.zsh
-fi
-source $HOME/.antigen.zsh
+export FZF_BASE=/usr/share/fzf
 
 # See https://github.com/zsh-users/zsh-autosuggestions/issues/570#issuecomment-833938418
 SPACESHIP_CHAR_PREFIX='%{%G%G'
 SPACESHIP_CHAR_SUFFIX='%}'
 
-antigen use 'ohmyzsh/ohmyzsh'
+[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle pip
-antigen bundle colored-man-pages
-antigen bundle command-not-found
-antigen bundle docker
-antigen bundle systemd
-antigen bundle desyncr/auto-ls
-antigen theme spaceship-prompt/spaceship-prompt
-if [ -f $FZF_BASE ]; then
-	antigen bundle Aloxaf/fzf-tab
-	antigen bundle fzf
+# Source antidote.
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+
+# Initialize antidote's dynamic mode, which changes `antidote bundle`
+# from static mode.
+source <(antidote init)
+
+# Bundle oh-my-zsh libs and plugins with the 'path:' annotation
+if [ -d $FZF_BASE ]; then
+	antidote bundle ohmyzsh/ohmyzsh path:plugins/fzf
+	antidote bundle Aloxaf/fzf-tab
 fi
+antidote bundle ohmyzsh/ohmyzsh path:lib
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/pip
+antidote bundle ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
+antidote bundle ohmyzsh/ohmyzsh path:plugins/systemd
+antidote bundle zsh-users/zsh-syntax-highlighting
+antidote bundle zsh-users/zsh-autosuggestions
+antidote bundle zsh-users/zsh-completions
+antidote bundle desyncr/auto-ls
 
-antigen apply
+antidote bundle spaceship-prompt/spaceship-prompt
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
