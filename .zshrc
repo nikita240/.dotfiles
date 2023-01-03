@@ -8,6 +8,7 @@ export FZF_BASE=/usr/share/fzf
 # See https://github.com/zsh-users/zsh-autosuggestions/issues/570#issuecomment-833938418
 SPACESHIP_CHAR_PREFIX='%{%G%G'
 SPACESHIP_CHAR_SUFFIX='%}'
+export SPACESHIP_CONFIG="$HOME/.dotfiles/spaceship.zsh"
 
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
@@ -46,11 +47,15 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias py="python3"
 alias dc='docker-compose'
+alias gpt='ddo'
 
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 export BUILDKIT_PROGRESS=plain
 export TERM=xterm-256color
+
+# User scripts and python executables.
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
 if [ -f "$HOME/.zshrc-local" ]; then
 	source $HOME/.zshrc-local
