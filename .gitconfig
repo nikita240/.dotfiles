@@ -1,10 +1,8 @@
 [user]
 	name = Nikita Rushmanov
-	email = rush3nik@gmail.com
-[includeIf "gitdir:~/woven/"]
-	path = ~/woven/.gitconfig
-[includeIf "gitdir:/workspaces/"]
-        path = ~/woven/.gitconfig
+	email = nikita.rushmanov@woven-planet.global
+[includeIf "gitdir:~/code/"]
+	path = ~/code/.gitconfig
 [core]
 	editor = /usr/bin/vim
 	excludesfile = ~/.gitignore-global

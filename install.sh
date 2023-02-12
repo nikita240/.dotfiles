@@ -19,7 +19,7 @@ mkdir -p ~/woven
 # Allow overriding with files of matching names in the custom-configs dir
 #==============
 ln -sf $DOTFILES/.vim/autoload ~/.vim/autoload
-ln -sf $DOTFILES/woven/.gitconfig ~/woven/.gitconfig
+ln -sf $DOTFILES/code/.gitconfig ~/code/.gitconfig
 ln -sf $DOTFILES/.antigen.zsh ~/.antigen.zsh
 ln -sf $DOTFILES/.gitconfig ~/.gitconfig
 ln -sf $DOTFILES/.gitignore ~/.gitignore
