@@ -55,7 +55,7 @@ export BUILDKIT_PROGRESS=plain
 export TERM=xterm-256color
 
 # User scripts and python executables.
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 
 if [ -f "$HOME/.zshrc-local" ]; then
 	source $HOME/.zshrc-local
