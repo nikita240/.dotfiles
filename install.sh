@@ -9,10 +9,17 @@ DOTFILES=$(dirname "$SCRIPT")
 # Delete existing dot folders
 #==============
 
+# Remove existing directories before creating symlinks
 rm -rf ~/.vim
-mkdir -p ~/.vim
+rm -rf ~/.config/niri
+rm -rf ~/.config/mako
+rm -rf ~/.config/waybar
+rm -rf ~/.config/alacritty
 
+# Create .config directory if it doesn't exist
+mkdir -p ~/.vim
 mkdir -p ~/woven
+mkdir -p ~/.config
 
 #==============
 # Create symlinks in the home folder
@@ -26,6 +33,10 @@ ln -sf $DOTFILES/.gitignore ~/.gitignore
 ln -sf $DOTFILES/.gitignore-global ~/.gitignore-global
 ln -sf $DOTFILES/.vimrc ~/.vimrc
 ln -sf $DOTFILES/.zshrc ~/.zshrc
+ln -sf $DOTFILES/.config/niri ~/.config/niri
+ln -sf $DOTFILES/.config/mako ~/.config/mako
+ln -sf $DOTFILES/.config/waybar ~/.config/waybar
+ln -sf $DOTFILES/.config/alacritty ~/.config/alacritty
 
 #==============
 # If the default shell is bash, make sure it will just launch zsh

@@ -1,0 +1,13 @@
+[general]
+import = ["dracula.toml"]
+
+
+[window]
+padding = { x = 20, y = 20 }
+decorations = "None"
+opacity = 0.75
+blur = true
+
+[font.normal]
+family = "Fira Code"
+style = "Regular" 
