@@ -30,7 +30,7 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/git
 antidote bundle ohmyzsh/ohmyzsh path:plugins/pip
 antidote bundle ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
-antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
+# antidote bundle ohmyzsh/ohmyzsh path:plugins/docker
 antidote bundle ohmyzsh/ohmyzsh path:plugins/systemd
 antidote bundle zsh-users/zsh-syntax-highlighting
 antidote bundle zsh-users/zsh-autosuggestions
