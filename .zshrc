@@ -60,3 +60,11 @@ export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 if [ -f "$HOME/.zshrc-local" ]; then
 	source $HOME/.zshrc-local
 fi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
